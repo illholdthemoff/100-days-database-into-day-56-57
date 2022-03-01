@@ -1,0 +1,15 @@
+Why databases?
+
+Because before now, in the past when we created files and read from them, we would go through the entire file whenever we wanted to do anything with them, ie when creating data, we replace the entire content in the file with new content, when reading, it always read all of it, when updating, it read the entire thing, finds the content to update and replaces, and when deleting again it went through the entire content, found the thing to delete, and so on. This is not HORRIBLY TERRIBLE for very veyr small files and projects, but for anything *at scale* it becomes an annoying nightmare that is HORRIBLY TERRIBLE veyr quickly. Before we continue by the way, Creating, Reading, Updating, and Deleting are comonly referred together as CRUD operations
+Another nightmare that could occur with big files like we had, is that in the future say, we could have multiple concurrent users accessing the file and uopdating at the same time, creating conflicts and fuicking everytihg up
+
+ENTER DATABASES - Database Management Systems (DBMS)
+These are software systems ahtat are optimized for data storage tasks.While ultimately they do store data in files, they do it in a much more efficient way and also much easier for us to deal with. They help with optimizing simultaneous read/write access, data storage and retrieval, and data querying (queries with filters and conditions)
+
+There are 2 main kinds of systems:
+Relational Database Management Systems (RDBMS / SQL Databases)
+Non-Relational Database Management Systems (NoSQL Databases)
+
+SQL databases typically store normalized data across multiple tables
+An example for this, would be for airports and flights, We would create two different tables, for airports and flights, and give them IDs, cities, and countries for airports, and ID, start, and destination for flights. We would relate the start and dest from the flight to the ID of the airport (whihc would be JFK, TFGRN etc) AS SHOWN IN DATABASE RELATIONS.JPG
+Something to note about normalized data, is that there are no nested values. Each cell contains just its own data. IE Airport ID only holds the ID of one airport, etc
